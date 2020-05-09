@@ -72,6 +72,6 @@
   def self.create_from_filename(filename)
    new_from_filename(filename) ||
 
-    new_song = self.create(song[1]), artist, genre)
+    new_song = self.create(song[1], artist, genre)
   end
 end
