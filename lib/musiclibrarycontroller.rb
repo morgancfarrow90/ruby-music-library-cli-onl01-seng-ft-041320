@@ -14,7 +14,7 @@ class MusicLibraryController
   end
 
   def call
-    puts "Welcome to your Music Library!"
+    puts "Welcome to your music library!"
     input = ""
     @sorted_songs = sorter
     while input != "exit"
