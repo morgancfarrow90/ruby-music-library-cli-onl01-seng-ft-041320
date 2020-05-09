@@ -58,4 +58,23 @@
 #     new_song
 #   end
  end
+ 
+ def self.new_from_filename(file_name)
+    song = split_filename(file_name)
+    artist = Artist.find_or_create_by_name(song[0])
+    genre = Genre.find_or_create_by_name(song[2])
+
+    new_song = self.new(song[1], artist, genre)
+  end
+
+  def self.create_from_filename(file_name)
+    song = split_filename(file_name)
+    artist = Artist.find_or_create_by_name(song[0])
+    genre = Genre.find_or_create_by_name(song[2])
+
+    self.create(song[1]).tap do |song|
+      song.artist = artist
+      song.genre = genre
+    end
+  end
 end
