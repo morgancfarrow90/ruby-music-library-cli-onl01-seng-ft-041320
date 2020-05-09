@@ -59,18 +59,9 @@
 #   end
  end
  
- def split_filename(filename)
-      song = filename.split(" - ").tap do |song|
-        song[2].chomp!(".mp3")
-      end
-      #song = filename.split(" - ")
-      #song[2].chomp!(".mp3")
-      #song
-    end
-
- 
  def self.new_from_filename(file_name)
-    song = split_filename(file_name)
+    song = filename.split(" - ").tap do |song|
+        song[2].chomp!(".mp3")
     artist = Artist.find_or_create_by_name(song[0])
     genre = Genre.find_or_create_by_name(song[2])
 
