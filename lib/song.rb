@@ -67,7 +67,7 @@
       #song[2].chomp!(".mp3")
       #song
     end
-  end
+
  
  def self.new_from_filename(file_name)
     song = split_filename(file_name)
@@ -76,6 +76,7 @@
 
     new_song = self.new(song[1], artist, genre)
   end
+
 
   def self.create_from_filename(file_name)
     song = split_filename(file_name)
