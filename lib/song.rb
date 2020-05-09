@@ -70,10 +70,7 @@
 
 
   def self.create_from_filename(filename)
-   song = filename.split(" - ").tap do |song|
-        song[2].chomp!(".mp3") end
-    artist = Artist.find_or_create_by_name(song[0])
-    genre = Genre.find_or_create_by_name(song[2])
+   new_from_filename(filename) ||
 
     self.create(song[1]).tap do |song|
       song.artist = artist
