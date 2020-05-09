@@ -15,26 +15,7 @@ class MusicLibraryController
 
   def call
     puts "Welcome to your music library!"
-    input = ""
-    @sorted_songs = sorter
-    while input != "exit"
-      puts "What would you like to do?"
-      input = gets.strip
-      case input
-      when "list songs"
-        songs
-      when  "list artists"
-        artists
-      when "list genres"
-        genres
-      when "play song"
-        play_song
-      when "list artist"
-        list_artist
-      when "list genre"
-        list_genre
-      end
-    end
+    
   end
 
   def songs
