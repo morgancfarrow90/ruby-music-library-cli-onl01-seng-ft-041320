@@ -72,9 +72,6 @@
   def self.create_from_filename(filename)
    new_from_filename(filename) ||
 
-    self.create(song[1]).tap do |song|
-      song.artist = artist
-      song.genre = genre
-    end
+    new_song = self.create(song[1]), artist, genre)
   end
 end
