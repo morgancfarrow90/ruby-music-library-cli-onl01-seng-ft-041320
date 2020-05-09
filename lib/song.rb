@@ -69,7 +69,7 @@
   end
   
    def self.create_from_filename(filename)
-    create.new_from_filename(filename)
+    new_song = create.new_from_filename(filename)
 
 
     
